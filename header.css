@@ -184,11 +184,23 @@
 
 /* --- RESPONSIVE MOBILE (Max 768px) --- */
 @media (max-width: 768px) {
-  /* Masquer la top-bar sur mobile pour gagner de la place (optionnel) */
+  
   .top-bar {
-    display: none;
+    display: block !important; /* On force l'affichage */
+    padding: 10px 0;
+    text-align: center;
+  }
+.contact-info {
+    display: flex;
+    flex-direction: column; /* On met le téléphone au-dessus de l'email pour que ça tienne */
+    align-items: center;
+    gap: 5px;
   }
 
+  .contact-info span {
+    margin-left: 0; /* On enlève la marge de gauche qui décentrerait le texte */
+    font-size: 0.8rem; /* On réduit un peu la taille pour les petits écrans */
+  }
   .nav-container {
     padding: 10px 5%;
   }
@@ -259,4 +271,5 @@
     display: none;
   }
 }
+
 
