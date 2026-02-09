@@ -1,0 +1,73 @@
+.services {
+  padding: 80px 10%;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: #0f1c2e;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+/* EFFET FASCINANT AU SURVOL */
+.service-card:hover {
+  transform: translateY(-10px); /* La carte monte */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #c5a47e; /* Apparition de la ligne dorée */
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: #c5a47e;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1); /* L'icône grossit légèrement */
+}
+
+.service-card h3 {
+  color: #0f1c2e;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.service-card p {
+  color: #777;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.read-more {
+  text-decoration: none;
+  color: #c5a47e;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}

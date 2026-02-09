@@ -1,0 +1,83 @@
+.main-footer {
+  background-color: #0f1c2e; /* Le bleu sombre de ta capture */
+  color: #ffffff;
+  padding: 80px 10% 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 50px;
+}
+
+/* Style des titres de colonnes */
+.footer-column h3 {
+  color: #c5a47e; /* Or */
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+/* Petite ligne sous le titre comme sur l'image */
+.footer-column h3::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 40px;
+  height: 1px;
+  background-color: #c5a47e;
+}
+
+/* Style des listes */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #c5a47e;
+  padding-left: 5px; /* Petit effet de mouvement */
+}
+
+/* Colonne Logo */
+.logo-text {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: #c5a47e;
+  margin-bottom: 10px;
+}
+
+.logo-text span {
+  color: #fff;
+}
+
+.footer-column p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Copyright */
+.footer-bottom {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}

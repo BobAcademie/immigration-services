@@ -1,0 +1,45 @@
+.hero {
+  position: relative;
+  height: 80vh; /* Prend 80% de la hauteur de l'écran */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  /* Remplace l'URL par ton image plus tard */
+  background:
+    linear-gradient(rgba(10, 17, 40, 0.7), rgba(10, 17, 40, 0.7)),
+    url("https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1920&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Effet Parallaxe (l'image bouge moins vite que le scroll) */
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+/* Animation pour faire monter le texte doucement au chargement */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

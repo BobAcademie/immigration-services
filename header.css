@@ -1,0 +1,183 @@
+/* ============================================================
+   1. VARIABLES ET CONFIGURATION
+   ============================================================ */
+:root {
+  --dark-blue: #0f1c2e; /* Bleu nuit profond */
+  --gold: #c5a47e; /* Or / Bronze */
+  --light-grey: #666; /* Texte principal */
+  --white: #ffffff;
+  --transition: all 0.3s ease-in-out;
+}
+
+/* ============================================================
+   2. TOP BAR (Téléphone & Email)
+   ============================================================ */
+.top-bar {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  padding: 8px 5%;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: flex-end; /* Aligne à droite */
+}
+
+.contact-info span {
+  margin-left: 25px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Espace entre l'icône et le texte */
+}
+
+/* ============================================================
+   3. NAVIGATION PRINCIPALE
+   ============================================================ */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background: var(--white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1000;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin-left: 30px;
+  position: relative; /* Nécessaire pour placer le sous-menu */
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--light-grey);
+  font-weight: 500;
+  transition: color 0.3s;
+  text-transform: uppercase; /* Style pro */
+  font-size: 0.85rem;
+}
+
+.menu a:hover {
+  color: var(--dark-blue);
+}
+/* Style des liens du menu */
+.menu > li > a {
+  text-decoration: none;
+  color: var(--light-grey);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 10px 0;
+  display: inline-block;
+  transition: var(--transition);
+}
+/* HOVER : Le texte devient bleu foncé */
+.menu > li > a:hover {
+  color: var(--dark-blue);
+}
+/* Ligne dorée animée sous les liens */
+.menu > li > a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--gold);
+  transition: var(--transition);
+}
+.menu > li > a:hover::after {
+  width: 100%;
+}
+
+/* ============================================================
+   4. BOUTON CONTACT (Style Pilule)
+   ============================================================ */
+.btn-contact-header {
+  background-color: var(--dark-blue);
+  color: var(--white) !important;
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: 1px solid var(--gold);
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.btn-contact-header:hover {
+  background-color: var(--gold);
+  color: var(--dark-blue) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(197, 164, 126, 0.3);
+}
+/* Supprime la ligne dorée sous le bouton */
+.btn-contact-header::after {
+  display: none !important;
+}
+
+/* ============================================================
+   5. SOUS-MENU (SERVICES)
+   ============================================================ */
+.submenu {
+  position: absolute;
+  top: 100%; /* Juste en dessous du lien parent */
+  left: 0;
+  background-color: var(--dark-blue);
+  min-width: 230px;
+  padding: 15px 0;
+  list-style: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-top: 3px solid var(--gold);
+
+  /* Masqué par défaut avec animation */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: var(--transition);
+}
+
+/* Affichage au survol de l'élément parent */
+.submenu li a {
+  color: rgba(255, 255, 255, 0.85);
+  padding: 12px 25px;
+  display: block;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  text-transform: none; /* Pas de majuscules ici pour la lisibilité */
+}
+
+/* Hover dans le sous-menu */
+.submenu li a:hover {
+  color: var(--gold) !important;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding-left: 32px; /* Effet de décalage vers la droite */
+}
+/* Affichage au survol de l'élément parent */
+.has-submenu:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+/*
+.main-header {
+  position: sticky;
+  top: 0;
+} */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
