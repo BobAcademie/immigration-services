@@ -27,6 +27,15 @@
   align-items: center;
   gap: 8px; /* Espace entre l'icône et le texte */
 }
+.top-bar a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.top-bar a:hover {
+    opacity: 0.8; /* Petit effet visuel quand on survole */
+}
 
 /* ============================================================
    3. NAVIGATION PRINCIPALE
@@ -271,5 +280,6 @@
     display: none;
   }
 }
+
 
 
