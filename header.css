@@ -181,3 +181,82 @@
     transform: translateY(0);
   }
 }
+
+/* --- RESPONSIVE MOBILE (Max 768px) --- */
+@media (max-width: 768px) {
+  /* Masquer la top-bar sur mobile pour gagner de la place (optionnel) */
+  .top-bar {
+    display: none;
+  }
+
+  .nav-container {
+    padding: 10px 5%;
+  }
+
+  /* Le bouton Menu Hamburger */
+  .menu-toggle {
+    display: block; /* On l'affiche sur mobile */
+    background: none;
+    border: none;
+    color: var(--dark-blue);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  /* On transforme le menu en colonne cachée */
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 0;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    display: none; /* Caché par défaut */
+  }
+
+  /* Classe ajoutée par JS pour ouvrir le menu */
+  .menu.active {
+    display: flex;
+  }
+
+  .menu > li {
+    margin: 10px 0;
+    width: 100%;
+    padding: 0 5%;
+  }
+
+  /* Le bouton contact prend toute la largeur sur mobile */
+  .btn-contact-header {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* Sous-menu sur mobile */
+  .submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    display: none; /* On l'ouvrira au clic ou on le laisse visible */
+    transform: none;
+    background: #f9f9f9;
+    box-shadow: none;
+    border-left: 3px solid var(--gold);
+    margin-top: 10px;
+  }
+
+  .has-submenu.active .submenu {
+    display: block;
+  }
+}
+
+/* Sur grand écran, on cache le bouton toggle */
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
